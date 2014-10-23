@@ -454,13 +454,13 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 0 auto;
+    margin: 200px auto;
 }
 
 /* Centres vertically yo. (IE8+) */
 .vertical {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 
@@ -665,8 +665,8 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
+    font-family: inherit;
+    color: black;
 }
 
 .page-description {
@@ -674,9 +674,9 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: inherit;
     letter-spacing: 0.01rem;
-    color: rgba(255,255,255,0.8);
+    color: black;
 }
 
 .no-cover.main-header {
