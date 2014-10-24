@@ -32,8 +32,8 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        // url: 'http://0.0.0.0',
-        url: 'https://stormy-hamlet-1657.herokuapp.com',
+        url: 'http://127.0.0.1:5000',
+        // url: 'https://stormy-hamlet-1657.herokuapp.com',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
@@ -59,8 +59,8 @@ config = {
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '0.0.0.0',
-            port: process.env.PORT
+            host: '127.0.0.1',
+            port: 5000
         },
         paths: {
             contentPath: path.join(__dirname, '/content/')
