@@ -454,13 +454,13 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 0 auto;
+    margin: 80px auto;
 }
 
 /* Centres vertically yo. (IE8+) */
 .vertical {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 
@@ -665,18 +665,21 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
+    font-family: inherit;
+    color: white;
 }
 
 .page-description {
-    margin: 0;
+    margin: 5% auto;
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: inherit;
     letter-spacing: 0.01rem;
-    color: rgba(255,255,255,0.8);
+    color: white;
+    width: 40%;
+
+    /* display: none; */
 }
 
 .no-cover.main-header {
@@ -1346,7 +1349,7 @@ body:not(.post-template) .post-title {
         box-sizing: border-box;
         height: auto;
         min-height: 240px;
-        height: 60%;
+        height: 100%;
         padding: 15% 0;
     }
 
@@ -1365,7 +1368,9 @@ body:not(.post-template) .post-title {
     .page-title {
         font-size: 4rem;
         letter-spacing: -1px;
-    }
+    
+        padding: 0px;
+}
 
     .page-description {
         font-size: 1.8rem;
