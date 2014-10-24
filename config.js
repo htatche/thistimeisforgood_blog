@@ -10,7 +10,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        // url: 'https://stormy-hamlet-1657.herokuapp.com/',
+        url: 'https://stormy-hamlet-1657.herokuapp.com',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -32,7 +32,8 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        // url: 'http://localhost:2368',
+        // url: 'http://0.0.0.0',
+        url: 'https://stormy-hamlet-1657.herokuapp.com',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
