@@ -1593,7 +1593,7 @@ body:not(.post-template) .post-title {
     }
 
     .post {
-        width: auto;
+        width: 100%;
         /* margin-top: 2rem; */
         /* margin-bottom: 2rem; */
         /* margin-left: 16px; */
