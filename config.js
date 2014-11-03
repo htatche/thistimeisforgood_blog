@@ -60,6 +60,7 @@ config = {
         server: {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
+            // host: '192.168.1.51',
             port: 5000
         },
         paths: {

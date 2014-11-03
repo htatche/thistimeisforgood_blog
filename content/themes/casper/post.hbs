@@ -8,8 +8,8 @@
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        {{! <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a> }}
+        {{! <a class="subscribe-button icon-feed" href="">Subscribe</a> }}
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
@@ -20,10 +20,12 @@
 </header>
 
 <main class="content" role="main">
+    <div class="content-overlay">
+        <div class="icon fontastic-icon-angle-up scrolltop" href="{{@blog.url}}"></div>
+        <div class="icon icon-arrow-left gohome" href="{{@blog.url}}"></div>
+    </div>
 
     <article class="{{post_class}}">
-
-
 
         <section class="post-content">
             {{content}}
@@ -57,7 +59,7 @@
         {{/author --}}
 
             <section class="share">
-                <h4>Share this post</h4>
+                {{! <h4>Share</h4> }}
                 <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>

@@ -100,7 +100,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 
 /* ==========================================================================
-   1. Icons - Sets up the icon font and respective classes
+   1. x - Sets up the icon font and respective classes
    ========================================================================== */
 
 /* Import the font file with the icons in it */
@@ -493,15 +493,6 @@ main {
     overflow: hidden;
 }
 
-/*.main-nav.overlay.sticky {*/
-.main-header.sticky {    
-  /*line-height: 48px;*/
-  /*position: fixed;*/
-  /*height: 48px;*/
-  /*text-align: left;*/
-  /*padding-left: 20px;*/
-}
-
 .main-header .inner {
     width: 80%;
 }
@@ -740,7 +731,7 @@ main {
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
-.post {
+.home-template .post {
     position: relative;
     display: table;
 
@@ -748,39 +739,31 @@ main {
     word-break: break-word;
     hyphens: auto;
 
-    background-position: 49% 73%;
+    background-position: 49% 50%;
     width: 100%;
     height: 170px;
 
-    box-shadow: rgba(0,0,0,0.05) 0 0 0 20px;
+    /*box-shadow: rgba(0,0,0,0.05) 0 0 0 20px;*/
+    opacity: 0.8;
 }
 
 .post h2>a, .post h3 {
     color: #FFF;
 }
 
-.post:hover {
-    opacity: 0.8; 
+.home-template .post:hover {
+    opacity: 1;
     transition: opacity 0.3s ease, top 0.3s ease;
 
     cursor: pointer;
 }
 
-body:not(.post-template) .post-title {
-    font-size: 3.6rem;
-}
-
-.post-title {
-}
-
 .post-description {
-    width: 80%;
-    /* padding: 20px; */
-    height: auto;
+    height: 100%;
     margin: 0 auto;
-    /* padding: 20px 0; */
-    /* vertical-align: middle; */
-    /* display: table-cell; */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%);
+    padding: 40px;
+    text-align: center;
 }
 
 .post-location {
@@ -815,7 +798,7 @@ body:not(.post-template) .post-title {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
-    color: #9EABB3;
+    color: #DFDFDF; /*#9EABB3;*/
 }
 
 .author-thumb {
@@ -895,6 +878,9 @@ body:not(.post-template) .post-title {
 
 .post-template .post-header {
    margin-bottom: 3.4rem;
+   display: block;
+   width: 50%;
+   margin: 0 auto;
 }
 
 .post-template .post-title {
@@ -913,17 +899,79 @@ body:not(.post-template) .post-title {
     border: none;
 }
 
+.post-template .post-head.main-header {
+    height: 100%;
+}
+
+.post-template .main-nav {
+    padding: 35px 65px;
+}
+
+.post-template .scrolltop {
+    position: absolute;
+    right: -70px;
+    top: 30px;
+}
+
+.post-template .gohome {
+    position: absolute;
+    left: -48px;
+    top: 30px;
+
+
+    border: 1px solid;
+    border-color: #fff;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 5px;    
+}
+
+.post-template .gohome::before {
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.post-template .scrolltop::before {
+    font-size: 40px;
+}
+
+.post-template .scrolltop:hover {
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+
+    cursor: pointer;
+}
+
 /* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
+    top: 80%;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: table;
+    padding: 15px;
+}
+
+.post-template .content-overlay {
+    position: fixed;
+    width: 85%;
+    height: 100px;
 }
 
 /* Tweak the .post wrapper style */
 .post-template .post {
+    display: block;
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0;
+}
+
+.post-template .post-content {
+    display: block;
 }
 
 /* Kill that stylish little circle that was on the border, too */
@@ -951,13 +999,13 @@ body:not(.post-template) .post-title {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 6rem 0 0 0;
-    padding: 6rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    /*margin: 6rem 0 0 0;*/
+    /*padding: 6rem 0 0 0;*/
+    /*border-top: #EBF2F6 1px solid;*/
 }
 
 .post-footer h4 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 0;
 }
 
@@ -1004,9 +1052,9 @@ body:not(.post-template) .post-title {
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
-    top: 6rem;
-    right: 0;
+    /*position: absolute;*/
+    /*top: 6rem;*/
+    /*right: 0;*/
     width: 140px;
 }
 
@@ -1400,6 +1448,21 @@ body:not(.post-template) .post-title {
         padding: 15% 0;
     }
 
+    .home-template .post {
+        opacity: 1;
+    }
+
+    .post-template .scrolltop {
+        position: fixed;
+        top: 30px;
+        left: auto;
+        right: 0;
+    }
+
+    .post-template .scrolltop::before {
+        color: #FFF;
+    }
+
     .scroll-down,
     .home-template .main-header:after { display: none; }
 
@@ -1417,7 +1480,7 @@ body:not(.post-template) .post-title {
         letter-spacing: -1px;
     
         padding: 0px;
-}
+    }
 
     .page-description {
         font-size: 1.8rem;
@@ -1429,8 +1492,8 @@ body:not(.post-template) .post-title {
         font-size: 0.95em
     }
 
-    body:not(.post-template) .post-title {
-        font-size: 3.2rem;
+    .post-title {
+        font-size: 5rem;
     }
 
     hr {
@@ -1510,8 +1573,6 @@ body:not(.post-template) .post-title {
 @media only screen and (max-width: 500px) {
 
     .main-header {
-        /* margin-bottom: 15px; */
-        /* height: 40%; */
     }
 
     .no-cover.main-header {
@@ -1523,6 +1584,11 @@ body:not(.post-template) .post-title {
         min-height: 160px;
         padding: 10% 0;
     }
+
+        
+    .post-template .scrolltop::before {
+        color: rgb(115, 115, 115);
+    }    
 
     .main-nav {
         padding: 0;
@@ -1664,13 +1730,27 @@ body:not(.post-template) .post-title {
         font-size: 1.8rem;
     }
 
-    body:not(.post-template) .post-title {
+    .post-title {
         font-size: 2.5rem;
+    }
+
+    .post-template .main-nav {
+        padding: 18px 5px;
+    }
+
+    .post-template .content {
+        width: 100%;
+        padding: 0;       
     }
 
     .post-template .post {
         padding-bottom: 0;
         margin-bottom: 0;
+    }
+
+    .post-template .post-content {
+        width: 90%;
+        margin: 10px auto;         
     }
 
     .post-template .site-footer {
