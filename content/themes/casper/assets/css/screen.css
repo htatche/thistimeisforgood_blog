@@ -28,7 +28,7 @@ article, aside, details,
 figcaption, figure,
 footer, header, hgroup,
 main, nav, section,
-summary { display: block; /* height: 100%; */ /* width: 100%; */ display: table-cell; vertical-align: middle;}
+summary { display: block; /* height: 100%; */ /* width: 100%; */ ; vertical-align: middle;}
 audio, canvas, video { display: inline-block; }
 audio:not([controls]) { display: none; height: 0; }
 [hidden], template { display: none; }
@@ -798,7 +798,7 @@ main {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
-    color: #DFDFDF; /*#9EABB3;*/
+    color: #F4F4F4;
 }
 
 .author-thumb {
@@ -910,26 +910,39 @@ main {
 .post-template .scrolltop {
     position: absolute;
     right: -70px;
-    top: 30px;
+    top: 45px;
+
+    display: none;
 }
 
 .post-template .gohome {
     position: absolute;
     left: -48px;
     top: 30px;
+    height: 50px;
+    line-height: 50px;
 
-
-    border: 1px solid;
-    border-color: #fff;
+    border: 1px solid #FFF;
     border-radius: 5px;
-    color: #FFF;
-    padding: 5px;    
+    padding: 2px 5px;     
+    color: white;
+
+    text-decoration: none;
 }
 
 .post-template .gohome::before {
-    color: white;
+    position: relative;
+    bottom: -3px;
     font-size: 24px;
     font-weight: bolder;
+}
+
+.post-template .gohome:hover {
+    background-color: #FFF;
+    border-color: #bfc8cd;
+    color: black;
+    opacity: 0.9;
+
 }
 
 .post-template .scrolltop::before {
@@ -937,7 +950,7 @@ main {
 }
 
 .post-template .scrolltop:hover {
-    -webkit-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite; Bug, parent disappears
     animation: bounce 2s infinite;
 
     cursor: pointer;
@@ -946,7 +959,7 @@ main {
 /* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
 .post-template .content {
-    overflow: hidden;
+/*     overflow: hidden; */
     top: 80%;
     width: 85%;
     height: 100%;
@@ -954,12 +967,16 @@ main {
     position: relative;
     display: table;
     padding: 15px;
+
+    z-index: 1;    
 }
 
 .post-template .content-overlay {
     position: fixed;
     width: 85%;
     height: 100px;
+
+    z-index: -1;  
 }
 
 /* Tweak the .post wrapper style */
@@ -1604,7 +1621,7 @@ main {
         height: 26px;
     }
 
-    .back-button,
+/*    .back-button,
     .subscribe-button {
         height: 44px;
         line-height: 41px;
@@ -1617,6 +1634,11 @@ main {
         border-color: #ebeef0;
         color: #2e2e2e;
         background: #ebeef0;
+    }*/
+
+    .post-template .gohome {
+        left: auto;
+        border: none;
     }
 
     .back-button {
@@ -1740,7 +1762,7 @@ main {
 
     .post-template .content {
         width: 100%;
-        padding: 0;       
+        padding: 0;   
     }
 
     .post-template .post {

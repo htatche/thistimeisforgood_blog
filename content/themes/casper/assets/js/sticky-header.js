@@ -67,11 +67,37 @@
 					"slow"
 				);		
 
-			}							
+			}			
 
-			$(".scrolltop").click(function() {
-				scrollToTop();
-			});
+			var activateScrollToTopButton = function() {
+
+				$(".scrolltop").css("display", "block");
+
+				$(".scrolltop").click(function() {
+					scrollToTop();
+				});
+
+			}		
+
+			var desactivateScrollToTopButton = function() {
+
+				$(".scrolltop").css("display", "none");
+
+			}
+
+			$(".gohome").hover(function() {
+				$(".content-overlay").css('z-index', 1);
+			}, function() {
+				$(".content-overlay").css('z-index', -1);
+			});	
+
+			$(window).scroll(function() {
+
+				var current_pos = $(window).scrollTop();
+
+				if (current_pos > 635) activateScrollToTopButton(); else desactivateScrollToTopButton();
+
+			});			
 
 		}		
 
