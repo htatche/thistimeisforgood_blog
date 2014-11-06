@@ -32,8 +32,7 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        // url: 'http://127.0.0.1:5000',
-        url: 'https://stormy-hamlet-1657.herokuapp.com',
+        url: 'http://127.0.0.1:5000',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
