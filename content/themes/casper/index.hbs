@@ -5,7 +5,7 @@
 <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-        {{! <div class="subscribe-wrapper"><a class="subscribe-button icon-feed" href="">Keep updated</a></div> }}
+        <a class="contact-button icon fontastic-icon-letter-mail" href="mailto:herve.tatche@gmail.com"> me</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -23,4 +23,3 @@
     {{> "loop"}}
 
 </main>
-
