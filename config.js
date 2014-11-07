@@ -10,7 +10,8 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'https://stormy-hamlet-1657.herokuapp.com',
+        url: 'http://thistimeisforgood.ml',
+        // url: 'https://stormy-hamlet-1657.herokuapp.com',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -59,7 +60,6 @@ config = {
         server: {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
-            // host: '192.168.1.51',
             port: 5000
         },
         paths: {
