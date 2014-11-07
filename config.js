@@ -11,7 +11,6 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.thistimeisforgood.com',
-        // url: 'https://stormy-hamlet-1657.herokuapp.com',
         mail: {},
         database: {
             client: 'sqlite3',

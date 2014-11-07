@@ -5,16 +5,17 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}" {{#if image}}" style="background-image: url({{image}}){{/if}}" >
-	<a href="{{url}}">
-    <header class="post-header">
-        <div class="post-description">
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            {{! <h3 class="post-location">Caribbean sea of Panama <i class="icon-location"></i></h3> }}
-        </div>
-    </header>
-  </a>
-</article>
+<a class="post-link-container" href="{{url}}">
+	<article class="{{post_class}}" {{#if image}} style="background-image: url({{image}}){{/if}}" >
+	    <header class="post-header">
+	        <div class="post-description">
+	            <h2 class="post-title">{{{title}}}</h2>
+	            {{! <h3 class="post-location">Caribbean sea of Panama <i class="icon-location"></i></h3> }}
+	        </div>
+	    </header>
+	</article>
+</a>
+
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}

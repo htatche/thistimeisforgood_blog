@@ -751,6 +751,11 @@ main {
     animation-delay: 0.1s;
 }
 
+.home-template a.post-link-container {
+    display: block;
+    width: 100%;
+}
+
 /* Every post, on every page, gets this style on its <article> tag */
 .home-template .post {
     position: relative;
@@ -768,8 +773,9 @@ main {
     opacity: 0.8;
 }
 
-.home-template .post h2>a, .home-template .post h3 {
+.home-template .post h2, .home-template .post h3 {
     color: #FFF;
+    font-family: Merriweather, serif;    
 }
 
 .home-template .post:hover {
@@ -798,7 +804,7 @@ main {
 
 .post-title a {
     text-decoration: none;
-    /*color:  white;*/
+    color:  white;
     font-family: Merriweather, serif;
 }
 
