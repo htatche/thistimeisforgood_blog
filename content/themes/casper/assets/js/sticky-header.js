@@ -7,35 +7,21 @@
 		var homeEffects = function() {
 
 			var last_pos = 0,
-					hidden_header = false,
-					animation = false // Prevents from calling the callback several times;
+					hidden_header = false;
 
 		  function animateCallback(done) {
 				hidden_header = done || false;
-				animation = false; 
 			}
 
 			var hideHeader = function() {
-				animation = true;
-
-				$('html, body').animate(
-					{ scrollTop: $('#content').offset().top	},
-					"slow",
-					function() { animateCallback(true); } 
-				);			
 
 				$('.main-header-content').addClass('animated fadeOutRightBig');
 				$('.main-header-content').removeClass('fadeInRightBig');
 			}
 
 			var showHeader = function() {
-				animation = true;
-
-				$('html, body').animate(
-					{ scrollTop: 0 },
-					"slow",
-					function() { animateCallback(); }
-				);		
+	
+				var current_pos = $(window).scrollTop();
 
 				$('.main-header-content').addClass('animated fadeInRightBig');
 				$('.main-header-content').removeClass('fadeOutRightBig');
@@ -47,10 +33,10 @@
 
 				if (last_pos < current_pos) {
 					// We are scrolling down
-					if (!animation && !hidden_header && current_pos > 200) hideHeader();
+					if (!hidden_header && current_pos > 200) hideHeader();
 				} else {
 					// We are scrolling up
-					if (!animation && hidden_header && current_pos < 700)  showHeader();
+					if (!hidden_header && current_pos < 200) showHeader();
 				}		
 
 				last_pos = $(window).scrollTop();
@@ -96,7 +82,7 @@
 				$(".content-overlay").css('z-index', -1);
 			});	
 
-			$(".scrolltop").click(function() {
+			$(".scrolltop").mousedown(function() {
 				scrollToTop();
 			});
 
