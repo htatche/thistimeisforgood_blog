@@ -13,10 +13,17 @@ config = {
         url: 'http://blog.thistimeisforgood.com',
         mail: {},
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
+            // client: 'sqlite3',
+            // connection: {
+            //     filename: path.join(__dirname, '/content/data/ghost.db')
+            // },
+				    connection: {
+		          host: process.env.POSTGRES_HOST,
+		          user: process.env.POSTGRES_USER,
+		          password: process.env.POSTGRES_PASSWORD,
+		          database: process.env.POSTGRES_DATABASE,
+		          port: '5432'
+				    },            
             debug: false,
             fileStorage: false
         },
@@ -58,7 +65,7 @@ config = {
 				    connection: {
 		          host: '127.0.0.1',
 		          user: 'htatche',
-		          password: 'icetea069',
+		          password: 'postgrepass',
 		          database: 'blog',
 		          port: '5432'
 				    },
