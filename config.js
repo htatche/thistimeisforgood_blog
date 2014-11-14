@@ -17,7 +17,8 @@ config = {
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
-            debug: false
+            debug: false,
+            fileStorage: false
         },
 
         server: {
@@ -50,10 +51,17 @@ config = {
         // ```
 
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
-            },
+            client: 'postgres',
+            // connection: {
+            //     filename: path.join(__dirname, '/content/data/ghost-dev.db')
+            // },
+				    connection: {
+		          host: '127.0.0.1',
+		          user: 'htatche',
+		          password: 'icetea069',
+		          database: 'blog',
+		          port: '5432'
+				    },
             debug: false
         },
         server: {
