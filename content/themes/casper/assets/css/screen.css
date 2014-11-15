@@ -523,7 +523,7 @@ main {
     position: absolute;
     z-index: 100;
     bottom: 18px; //45px;
-    left: 95%; //50%;
+    left: 94%; //50%;
     margin-left: -16px;
     width: 34px;
     height: 34px;
@@ -1707,6 +1707,7 @@ main {
     .post-template .gohome {
         left: auto;
         border: none;
+        font-size: 15px;
     }
 
     .back-button {
