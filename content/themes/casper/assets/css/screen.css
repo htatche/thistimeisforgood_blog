@@ -289,7 +289,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: #EFEFEF 1px solid;
+    border-top: #A3A3A3 1px solid;
     margin: 3.2em 0;
     padding: 0;
 }
@@ -522,8 +522,8 @@ main {
     display: block;
     position: absolute;
     z-index: 100;
-    bottom: 45px;
-    left: 50%;
+    bottom: 18px; //45px;
+    left: 95%; //50%;
     margin-left: -16px;
     width: 34px;
     height: 34px;
@@ -531,8 +531,8 @@ main {
     text-align: center;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    /*-webkit-transform: rotate(-90deg);*/
+    /*transform: rotate(-90deg);*/
     -webkit-animation: bounce 4s 2s infinite;
     animation: bounce 4s 2s infinite;
 }
@@ -568,6 +568,25 @@ main {
 .archive-template .scroll-down,
 .archive-template .main-header:after {
     display: none
+}
+
+.archive-template .main-header {
+    position: relative;
+    max-height: 20%;
+    background-position: 49% 55%;
+}
+
+.archive-template .main-header-content {
+    margin: 50px auto;
+}
+
+.archive-template .main-header .page-description {
+    display: none;
+}
+
+.archive-template .content {
+    position: relative;
+    top: 0%;
 }
 
 /* Appears in the top right corner of your home page */
@@ -757,7 +776,7 @@ main {
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
-.home-template .post {
+.home-template .post, .archive-template .post {
     position: relative;
     display: table;
 
@@ -773,7 +792,8 @@ main {
     opacity: 0.8;
 }
 
-.home-template .post h2, .home-template .post h3 {
+.home-template .post h2, .home-template .post h3,
+.archive-template .post h2, .archive-template .post h3 {
     color: #FFF;
     font-family: Merriweather, serif;    
 }
@@ -1421,10 +1441,10 @@ main {
 }
 
 /* On page2+ make all the headers smaller */
-.archive-template .main-header {
+/*.archive-template .main-header {
     max-height: 30%;
 }
-
+*/
 /* On page2+ show extra pagination controls at the top of post list */
 .archive-template .extra-pagination {
     display: block;
@@ -1494,7 +1514,7 @@ main {
         padding: 15% 0;
     }
 
-    .home-template .post {
+    .home-template .post, .archive-template .post {
         opacity: 1;
     }
 
@@ -1641,9 +1661,9 @@ main {
     }
 
     .archive-template .main-header {
-        max-height: 20%;
-        min-height: 160px;
-        padding: 10% 0;
+        max-height: 10%;
+        min-height: 0px;
+        padding: 0% 0;
     }
 
         

@@ -27,6 +27,7 @@
 				$('.main-header-content').removeClass('fadeOutRightBig');
 			}							
 
+			// Show or hide title on scrolling
 			$(window).scroll(function() {
 
 				var current_pos = $(window).scrollTop();
@@ -42,6 +43,25 @@
 				last_pos = $(window).scrollTop();
 
 			});
+
+			// Infinite scrolling plugin
+			// var ias = jQuery.ias({
+			//   container:  '#content',
+			//   item:       '.post-link-container',
+			//   pagination: '.pagination',
+			//   next:       '.older-posts',
+			//   negativeMargin: 40
+			// });
+
+			// ias.extension(new IASSpinnerExtension());		
+
+			// // ias.extension(new IASTriggerExtension());
+			// ias.extension(new IASPagingExtension());
+
+			// ias.extension(new IASHistoryExtension({
+			//     prev: '.newer-posts'
+			// }));			
+
 		}
 
 		var postEffects = function() {
