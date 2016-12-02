@@ -7,26 +7,23 @@
 {{#post}}
 
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <div class="main-header-overlay">
-        <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-
-            <header class="post-header">
-                <h1 class="post-title">{{title}}</h1>
-                <section class="post-meta">
-                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
-                </section>
-            </header>        
-        </nav>
-    </div>
+    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
 </header>
 
 <main class="content" role="main">
-    <div class="content-overlay">
-        <div class="icon fontastic-icon-angle-up scrolltop"></div>
-        <a onclick="window.history.back()" class="icon icon-arrow-left gohome" > Home </a>
-    </div>
-
     <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+            </section>
+        </header>
 
         <section class="post-content">
             {{content}}
@@ -35,7 +32,7 @@
         <footer class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
-        {{!-- #author}}
+        {{#author}}
 
             {{#if image}}
             <figure class="author-image">
@@ -57,11 +54,11 @@
                 </div>
             </section>
 
-        {{/author --}}
+        {{/author}}
 
             <section class="share">
-                {{! <h4>Share</h4> }}
-                <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
@@ -78,7 +75,25 @@
         </footer>
 
     </article>
-
 </main>
+
+<aside class="read-next">
+    {{#next_post}}
+    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
 
 {{/post}}
