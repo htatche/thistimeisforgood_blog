@@ -2,4 +2,4 @@ content/data/ghost-dev.db
 content/data/ghost.db
 config.js
 node_modules
-.DS_Store
+.DS_Storenode_modules
