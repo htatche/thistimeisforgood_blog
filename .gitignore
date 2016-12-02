@@ -3,3 +3,4 @@ content/data/ghost.db
 config.js
 node_modules
 .DS_Storenode_modules
+npm-debug.log
