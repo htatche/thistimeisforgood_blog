@@ -6,16 +6,10 @@ config = {
         url: 'http://blog.thistimeisforgood.com',
         mail: {},
         database: {
-            client: 'postgres',
-            connection: {
-              host: process.env.POSTGRES_HOST,
-              user: process.env.POSTGRES_USER,
-              password: process.env.POSTGRES_PASSWORD,
-              database: process.env.POSTGRES_DATABASE,
-              port: '5432'
-            },
-            debug: false,
-            fileStorage: false
+          client: 'pg',
+          connection: process.env.DATABASE_URL,
+          debug: false,
+          fileStorage: false
         },
         server: {
             host: '0.0.0.0',
@@ -51,8 +45,7 @@ config = {
             connection: {
               host: '127.0.0.1',
               user: 'htatche',
-              password: 'postgrepass',
-              database: 'blog',
+              database: 'blog_heroku',
               port: '5432'
             },
             debug: false
