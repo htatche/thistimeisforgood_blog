@@ -18,6 +18,18 @@
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
+{{!-- Google maps embebbed map, includes tweak to hide toolbar --}}
+{{!-- because frameborder and border options do not work --}}
+<div style="height:380px; overflow:hidden;">
+  <iframe
+    width="85%"
+    height="380"
+    frameborder="0"
+    style="border:0; position:relative; top:-78px; margin: 0 auto;"
+    src="https://www.google.com/maps/d/embed?mid=1AIaQ-cPnZ0AK2GDN82x7ifMQ4GQ">
+  </iframe>
+</div>
+
 {{!-- The main content area on the homepage --}}
 <main id="content" class="content" role="main">
 

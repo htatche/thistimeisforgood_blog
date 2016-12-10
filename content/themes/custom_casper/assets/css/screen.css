@@ -991,8 +991,8 @@ body.nav-opened .nav {
     animation-delay: 0.1s;
 }
 
-/* Homepage posts */
-.home-template .post {
+/* Listed posts posts */
+.home-template .post, .archive-template .post {
     position: relative;
     width: 80%;
     max-width: 710px;
